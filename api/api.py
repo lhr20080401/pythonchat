@@ -3,7 +3,7 @@ import pymongo
 app = Flask(__name__)
  
 @app.route('/api/data/up_message/')
-def upload_file():
+def up_message():
      return "111"
 	
 @app.route('/uploader', methods = ['GET', 'POST'])
