@@ -6,7 +6,7 @@ app = Flask(__name__)
 myclient = pymongo.MongoClient("mongodb://cluster0.wc9bxyx.mongodb.net/myFirstDatabase:27017")
 mongo_auth = myclient.admin
 mongo_auth.authenticate('admin','lhr368519')
-mydb = myclient["Cluster0"]
+mydb = mongo_auth["Cluster0"]
 mycol = mydb["sites"]
 
 mydict = { "name": "RUNOOB", "alexa": "10000", "url": "https://www.runoob.com" }
