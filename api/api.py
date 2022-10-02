@@ -3,11 +3,12 @@ import pymongo
 #from pymongo import MongoClient 
 app = Flask(__name__)
 
-myclient = pymongo.MongoClient("mongodb://admin:lhr368519@cluster0.wc9bxyx.mongodb.net/myFirstDatabase:27017")
+myclient = pymongo.MongoClient("mongodb://cluster0.wc9bxyx.mongodb.net/myFirstDatabase:27017")
+mongo_auth = mongo_client.admin
+mongo_auth.authenticate('admin','lhr368519')
 mydb = myclient["Cluster0"]
-#mydb.authenticate('admin','lhr368519')
 mycol = mydb["sites"]
- 
+
 mydict = { "name": "RUNOOB", "alexa": "10000", "url": "https://www.runoob.com" }
 @app.route('/api/data/up_message/')
 def up_message():
