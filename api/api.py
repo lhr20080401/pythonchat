@@ -3,7 +3,7 @@ import pymongo
 #from pymongo import MongoClient 
 app = Flask(__name__)
 
-myclient = pymongo.MongoClient(host="mongodb://admin:lhr368519@cluster0.wc9bxyx.mongodb.net/myFirstDatabase:27017")
+myclient = pymongo.MongoClient(host="mongodb://admin:lhr368519@cluster0.wc9bxyx.mongodb.net/myFirstDatabase:27017/")
 mydb = myclient["Cluster0"]
 #mydb.authenticate('admin','lhr368519')
 mycol = mydb["sites"]
