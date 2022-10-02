@@ -4,7 +4,7 @@ import pymongo
 app = Flask(__name__)
 
 myclient = pymongo.MongoClient("mongodb://cluster0.wc9bxyx.mongodb.net/myFirstDatabase:27017")
-mongo_auth = mongo_client.admin
+mongo_auth = myclient.admin
 mongo_auth.authenticate('admin','lhr368519')
 mydb = myclient["Cluster0"]
 mycol = mydb["sites"]
