@@ -13,7 +13,7 @@ mycol = mydb["sites"]
 mydict = { "name": "RUNOOB", "alexa": "10000", "url": "https://www.runoob.com" }
 @app.route('/api/data/up_message/')
 def up_message():
-    mycol.insert_one(mydict) 
+    #mycol.insert_one(mydict) 
     return "true"
 	
 @app.route('/uploader', methods = ['GET', 'POST'])
