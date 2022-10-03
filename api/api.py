@@ -13,8 +13,16 @@ lhr=1
 mydict = { "name": "RUNOOB", "alexa": "10000", "url": "https://www.runoob.com" }
 @app.route('/api/data/up_message/')
 def up_message():
+    myclient = pymongo.MongoClient("mongodb+srv://cluster0.hirzqvu.mongodb.net/myFirstDatabase:27017",username="haor",password="lhr368519")
+#mongo_auth = myclient.admin
+    mydb = myclient["Cluster0"]
+#mydb.authenticate('haor','lhr368519')
+#mydb = myclient["Cluster0"]
+    mycol = mydb["sites"]
+    lhr=1
+    mydict = { "name": "RUNOOB", "alexa": "10000", "url": "https://www.runoob.com" }
     global lhr
-    #mycol.insert_one(mydict) 
+    mycol.insert_one(mydict) 
     return lhr
 	
 @app.route('/uploader', methods = ['GET', 'POST'])
