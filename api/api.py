@@ -1,4 +1,3 @@
- 
 from flask import Flask
 from flask_pymongo import PyMongo
 app = Flask(__name__)
@@ -90,14 +89,17 @@ def add_data_to_mongo(collection_name, data_dic):
         collection_name: 表名字符串
         data_dic: 数据字典
     """
-    mycol = mongo[collection_name]
-    mycol.insert(data_dic)
+    mycol = mongo.db[collection_name]
+    #mycol = mycol['User']
+    mycol.insert_one(data_dic)
  
  
 @app.route('/')
 def hello_world():
     #add_data_to_mongo('User', {'username': "aaa"})
     try:
+        #mongo = PyMongo(app)
+        print(mongo.db)
         add_data_to_mongo('User', {'username': "aaa"})
     except Exception as r:
         print(r)
