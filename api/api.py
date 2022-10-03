@@ -9,12 +9,12 @@ mydb = myclient["Cluster0"]
 #mydb.authenticate('haor','lhr368519')
 #mydb = myclient["Cluster0"]
 mycol = mydb["sites"]
-
+lhr=1
 mydict = { "name": "RUNOOB", "alexa": "10000", "url": "https://www.runoob.com" }
 @app.route('/api/data/up_message/')
 def up_message():
     #mycol.insert_one(mydict) 
-    return "true"
+    return lhr
 	
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file():
