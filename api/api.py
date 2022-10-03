@@ -4,16 +4,16 @@ from flask_pymongo import PyMongo
 app = Flask(__name__)
  
 # mongodb 配置
-app.config['MONGO_URI'] = "mongodb+srv://haor:lhr368519@cluster0.hirzqvu.mongodb.net/Cluster0"
+app.config['MONGO_URI'] =  "mongodb+srv://haor:lhr368519@cluster0.hirzqvu.mongodb.net:27017/myFirstDatabase"
 #.format(
-        #user_name='haor',
-        #pass_word='lhr368519',
-        #host='cluster0.hirzqvu.mongodb.net/myFirstDatabase',
+        #user_name='xxxxxx',
+        #pass_word='******',
+        #host='192.168.1.1',
         #port=27017,
-        #database='Cluster0'
+        #database='database_name'
     #)
 mongo = PyMongo(app)
- 
+
  
 # 查找
 def get_form_mongo_find(collection_name, conditions_dic, order_rule="", page_num=1, page_size=10):
@@ -94,11 +94,14 @@ def add_data_to_mongo(collection_name, data_dic):
  
 @app.route('/')
 def hello_world():
+    #add_data_to_mongo('User', {'username': "aaa"})
     try:
-        add_data_to_mongo('User', {'username': "aaa"})
+        mycol = mongo['Cluster0']
+        mycol.a.insert({'username': "aaa"})
     except Exception as r:
         print(r)
         return r
+
     return 'Hello World!'
  
  
