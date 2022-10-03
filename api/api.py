@@ -90,7 +90,7 @@ def add_data_to_mongo(collection_name, data_dic):
         collection_name: 表名字符串
         data_dic: 数据字典
     """
-    mycol = mongo.db[collection_name]
+    mycol = mongo[collection_name]
     mycol.insert(data_dic)
  
  
