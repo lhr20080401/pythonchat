@@ -13,6 +13,7 @@ lhr=1
 mydict = { "name": "RUNOOB", "alexa": "10000", "url": "https://www.runoob.com" }
 @app.route('/api/data/up_message/')
 def up_message():
+    global lhr
     #mycol.insert_one(mydict) 
     return lhr
 	
