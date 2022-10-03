@@ -94,7 +94,11 @@ def add_data_to_mongo(collection_name, data_dic):
  
 @app.route('/')
 def hello_world():
-    add_data_to_mongo('User', {'username': "aaa"})
+    try:
+        add_data_to_mongo('User', {'username': "aaa"})
+    except Exception as r:
+        print(r)
+        return r
     return 'Hello World!'
  
  
