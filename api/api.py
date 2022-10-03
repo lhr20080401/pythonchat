@@ -4,13 +4,14 @@ from flask_pymongo import PyMongo
 app = Flask(__name__)
  
 # mongodb 配置
-app.config['MONGO_URI'] =  "mongodb+srv://{user_name}:{pass_word}@{host{port}/{database}".format(
-        user_name='haor',
-        pass_word='lhr368519',
-        host='cluster0.hirzqvu.mongodb.net/myFirstDatabase',
-        port=27017,
-        database='Cluster0'
-    )
+app.config['MONGO_URI'] = "mongodb+srv://haor:lhr368519@cluster0.hirzqvu.mongodb.net/myFirstDatabase:27017/Cluster0"
+#.format(
+        #user_name='haor',
+        #pass_word='lhr368519',
+        #host='cluster0.hirzqvu.mongodb.net/myFirstDatabase',
+        #port=27017,
+        #database='Cluster0'
+    #)
 mongo = PyMongo(app)
  
  
