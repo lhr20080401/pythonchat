@@ -5,7 +5,7 @@ app = Flask(__name__)
  
 # mongodb 配置
 
-app.config['MONGO_URI'] = "mongodb+srv://haor:lhr368519@cluster0.hirzqvu.mongodb.net:27017/Cluster0"
+app.config['MONGO_URI'] = "mongodb+srv://haor:lhr368519@cluster0.hirzqvu.mongodb.net/Cluster0"
 
 #.format(
         #user_name='xxxxxx',
