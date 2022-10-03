@@ -11,7 +11,6 @@ def up_message():
     mycol = mydb["sites"]
     lhr=1
     mydict = { "name": "RUNOOB", "alexa": "10000", "url": "https://www.runoob.com" }
-    global lhr
     mycol.insert_one(mydict) 
     return lhr
 	
