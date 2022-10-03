@@ -98,8 +98,7 @@ def add_data_to_mongo(collection_name, data_dic):
 def hello_world():
     #add_data_to_mongo('User', {'username': "aaa"})
     try:
-        mycol = mongo['Cluster0']
-        mycol.a.insert({'username': "aaa"})
+        add_data_to_mongo('User', {'username': "aaa"})
     except Exception as r:
         print(r)
         return r
